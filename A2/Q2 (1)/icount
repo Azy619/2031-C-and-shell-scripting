@@ -1,0 +1,56 @@
+#!/bin/sh
+# EECS2031 - asg2
+# Filename: icount
+# Author: Patel, Khushal
+# Email: york18@my.yorku.ca
+# Login ID: york18
+
+echo -n "Enter the file name: "
+read filename
+
+if test ! -f $filename
+then
+echo "File '$filename' does not exist."
+
+elif test ! -r $filename
+then echo "File '$filename' is not readable."
+
+else
+
+echo -n "Count lines, words, characters or all three (l, m, c, a)? "
+read varname
+
+until test $varname = l || test $varname = L || test $varname = m || test $varname = M || test $varname = c || test $varname = C || test $varname = a || test $varname = A
+do
+echo "Invalid option"
+echo -n "Count lines, words, characters or all three (l, w, c, a)? "
+read varname
+done
+
+if test $varname = l || test $varname = L
+then
+	lines=`wc -l < $filename` 
+	echo "File '$filename' contains $lines lines."
+
+elif test $varname = m || test $varname = M 
+then
+	words=`wc -w < $filename` 
+	echo "File '$filename' contains $words words." 
+
+elif test $varname = c || test $varname = C
+then
+	characters=`wc -m < $filename`
+	echo "File '$filename' contains $characters characters." 
+
+elif test $varname = a || test $varname = A
+then
+	lines=`wc -l < $filename`
+	words=`wc -w < $filename`
+	characters=`wc -m < $filename`
+	echo "File '$filename' contains $lines lines, $words words, $characters characters." 
+
+else
+	echo "Invalid option" 
+fi
+
+fi

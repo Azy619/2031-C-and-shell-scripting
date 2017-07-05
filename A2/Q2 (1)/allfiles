@@ -1,0 +1,14 @@
+#!/bin/sh
+# EECS2031 - asg2
+# Filename: allfiles
+# Author: Patel, Khushal
+# Email: york18@my.yorku.ca
+# Login ID: york18
+
+for f in *
+do
+	if test -f $f
+	then
+		echo $f
+	fi
+done

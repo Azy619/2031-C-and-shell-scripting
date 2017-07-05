@@ -1,0 +1,31 @@
+(1) echo 'a line' > myFile
+
+
+(2) echo '2nd line' >> myFile
+echo '3rd line' >> myFile
+echo '4th line' >> myFile
+echo '5th line' >> myFile
+echo '6th line' >> myFile
+
+(3) ( who ; who am i ; date ) >> myFile
+
+(4) a) chmod a+r myFile
+b) chmod ug+rw myFile ; chmod o-rwx myFile
+c) chmod a-w myFile; chmod u+w myFile
+d) chmod ug+x myFile ; chmod a-rw myFile ; chmod u+rw myFile
+
+
+(5) a) chmod a+r myStuff
+b) chmod a-rwx myStuff; chmod ug+rw myStuff
+c) chmod a-w myStuff; chmod u+w myStuff
+d) chmod a-rw myStuff; chmod u+rw myStuff; chmod chmod ug+x myStuff
+
+(6)  a) touch backgammon backpacking baseball boxing biking chess fencing blackjack groupA groupB groupX groupY
+b) ls *x* *X*
+c) cat *o*
+d) cat backgammon backpacking blackjack
+e) ( cat backgammon backpacking blackjack ) > all3
+
+
+
+

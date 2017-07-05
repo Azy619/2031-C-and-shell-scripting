@@ -1,0 +1,75 @@
+#!/bin/sh
+# EECS2031 - asg2
+# Filename: doublesp
+# Author: Patel, Khushal
+# Email: york18@my.yorku.ca
+# Login ID: york18
+
+echo -n "Enter input file name: "
+read fileinput
+
+if test ! -f $fileinput
+then
+echo "File '$fileinput' does not exist."
+
+elif test ! -r $fileinput
+then echo "File '$fileinput' is not readable."
+
+else
+
+echo -n "Enter output file name: "
+read fileoutput
+
+if test -f $fileoutput && test ! -w $fileoutput
+then
+echo "File '$fileoutput' not writable."
+exit 1
+fi
+
+if test ! -f $fileoutput
+then
+	touch $fileoutput
+	size=`wc -l < $fileinput`
+	count=1
+
+	while test `expr $count` -le `expr $size`
+	do
+	(head -$count $fileinput | tail -1) >> $fileoutput
+	(echo;echo) >> $fileoutput
+	count=`expr $count + 1`
+	done
+
+elif test -f $fileoutput
+then
+	echo "File '$fileoutput' exists."
+	echo -n "Append to it (y/n)? "
+	read append
+
+	until test $append = "y" || test $append = "Y" || test $append = "n" || test $append = "N"
+	do
+	echo "Invalid option"
+	echo -n "Append to it (y/n)? "
+	read append
+	done
+
+	if test $append = y || test $append = Y
+	then
+		size=`wc -l < $fileinput`
+		count=1
+
+		while test `expr $count` -le `expr $size`
+		do
+		(head -$count $fileinput | tail -1) >> $fileoutput
+		(echo;echo) >> $fileoutput
+		count=`expr $count + 1`
+		done
+
+	elif test $append = "n" || test $append = "N"
+	then
+		exit 1
+	else
+		echo "Invalid option"
+	fi
+
+fi
+fi

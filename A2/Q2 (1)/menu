@@ -1,0 +1,19 @@
+#!/bin/sh
+# EECS2031 - asg2
+# Filename: menu
+# Author: Patel, Khushal
+# Email: york18@my.yorku.ca
+# Login ID: york18
+
+echo "=================== MENU ==================="
+echo "s: Search for a word"
+echo "c: Count lines, words, characters"
+echo "f: List all ordinary files in current directory"
+echo "v: View content of a file"
+echo "d: Double spacing"
+echo "a: Add line numbers"
+echo "l: Display specified lines in file"
+echo "h: Help / Display this menu"
+echo "r: Clear the screen"
+echo "q: Quit the program"
+echo "============================================"

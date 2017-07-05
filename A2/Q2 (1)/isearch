@@ -1,0 +1,47 @@
+#!/bin/sh
+# EECS2031 - asg2
+# Filename: isearch
+# Author: Patel, Khushal
+# Email: york18@my.yorku.ca
+# Login ID: york18
+
+echo -n "Enter the file name: "
+read filename
+
+if test ! -f $filename
+then
+echo "File '$filename' does not exist."
+
+elif test ! -r $filename
+then echo "File '$filename' is not readable."
+
+else
+
+echo -n "Enter the word to search for: "
+read searchword
+
+echo -n "Case sensitive (y/n)? "
+read varname
+
+until test $varname = "y" || test $varname = "Y" || test $varname = "n" || test $varname = "N"
+do
+echo "Invalid option"
+echo -n "Case sensitive (y/n)? "
+read varname
+done
+
+	if test $varname = "y" || test $varname = "Y"
+	then
+  	grep $searchword $filename
+
+	elif test $varname = "n" || test $varname = "N"
+	then
+	grep -i $searchword $filename
+
+	fi
+
+	if test $? -ne 0
+	then
+  	echo "Word '$searchword' not found."
+	fi
+fi

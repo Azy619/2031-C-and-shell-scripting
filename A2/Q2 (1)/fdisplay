@@ -1,0 +1,49 @@
+#!/bin/sh
+# EECS2031 - asg2
+# Filename: fdisplay
+# Author: Patel, Khushal
+# Email: york18@my.yorku.ca
+# Login ID: york18
+
+echo -n "Enter the file name: "
+read filename
+
+if test ! -f $filename
+then
+echo "File '$filename' does not exist."
+
+elif test ! -r $filename
+then 
+echo "File '$filename' is not readable."
+
+else
+
+echo -n "Enter option (e, p, f, l): "
+read varname
+
+until test $varname = e || test $varname = E || test $varname = p || test $varname = P || test $varname = f || test $varname = F || test $varname = l || test $varname = L
+do
+echo "Invalid option"
+echo -n "Enter option (e, p, f, l): "
+read varname
+done
+
+if test $varname = e || test $varname = E
+then
+	cat $filename
+elif test $varname = p || test $varname = P
+then
+	cat $filename | more
+
+elif test $varname = f || test $varname = F
+then
+	head $filename
+
+elif test $varname = l || test $varname = L
+then
+	tail $filename
+else
+	echo "Invalid option" 
+fi
+
+fi

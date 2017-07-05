@@ -1,0 +1,29 @@
+#!/bin/sh
+# EECS2031 - asg2
+# Filename: myutil
+# Author: Patel, Khushal
+# Email: york18@my.yorku.ca
+# Login ID: york18
+
+menu
+echo
+echo -n "Enter command: "
+
+while read command 
+do
+	case $command in
+	s | S)	isearch;;
+	c | C) 	icount;;
+	f | F) 	allfiles;;
+	v | V)	fdisplay;;
+	d | D)	doublesp;;
+	a | A)	addlines;;
+	l | L)	prtlines;;
+	h | H)	menu;;	
+	r | R)	clear;;
+	q | Q)	exit 1;;
+	*)		echo "Invalid command";;
+	esac
+	echo
+	echo -n "Enter command: "
+done

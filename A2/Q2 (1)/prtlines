@@ -1,0 +1,51 @@
+#!/bin/sh
+# EECS2031 - Lab 8
+# Filename: prtlines
+# Author: Patel, Khushal
+# Email: york18@my.yorku.ca
+# Login ID: york18
+
+echo -n "Enter file name: "
+read filename
+
+if test ! -f $filename
+then
+echo "File '$filename' does not exist."
+
+elif test ! -r $filename
+then echo "File '$filename' is not readable."
+
+else
+size=`wc -l < $filename`
+echo "File '$filename' has $size lines."
+echo -n "From line: "
+read x
+while test `expr $x` -le `expr 0` || test `expr $x` -gt `expr $size`
+do
+	echo "Invalid line number"
+	echo -n "From line: "
+	read x
+done
+
+echo -n "To line: "
+read y
+while test `expr $y` -le `expr 0` || test `expr $y` -gt `expr $size` || test `expr $y` -lt `expr $x`
+do
+	echo "Invalid line number"
+	echo -n "To line: "
+	read y
+done
+last=`expr $y - $x + 1`
+count=1
+
+while test `expr $count` -le $last
+do
+
+echo -n "$x: "
+echo -n "`head -$x phone_book.txt | tail -1`"
+echo
+count=`expr $count + 1`
+x=`expr $x + 1`
+done
+
+fi

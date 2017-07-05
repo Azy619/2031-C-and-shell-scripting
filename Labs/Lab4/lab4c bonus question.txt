@@ -1,0 +1,1 @@
+Reverse an array using arrays but don't use any indexing(i.e., use only pointers).

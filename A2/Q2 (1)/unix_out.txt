@@ -1,0 +1,88 @@
+indigo 52 % isearch 
+Enter input file name: UFO.txt
+File 'UFO.txt' does not exist.
+indigo 53 % isearch
+Enter input file name: ghost.txt
+File 'ghost.txt' is not readable.
+indigo 55 % isearch
+Enter input file name: phone_book
+Enter the word to search for: alex
+Case-sensitive (y/n)? n
+alex johnson 	(416) 555-1234 	family doctor	
+Alexander Smith (905) 555-9876 	home renovation contractor
+indigo 56 % isearch
+Enter input file name: phone_book
+Enter the word to search for: alex
+Case-sensitive (y/n)? Y 
+alex johnson 	(416) 555-1234 	family doctor	
+indigo 69 % isearch
+Enter input file name: phone_book
+Enter the word to search for: Alex
+Case-sensitive (y/n)? Z
+Invalid option
+Case-sensitive (y/n)? a
+Invalid option
+Case-sensitive (y/n)? Y
+Alexander Smith (905) 555-9876 	home renovation contractor
+indigo 71 % isearch
+Enter input file name: phone_book
+Enter the word to search for: microwave
+Case-sensitive (y/n)? y
+Word 'microwave' not found.
+indigo 72 %
+
+#####################################
+
+indigo 55 % icount
+Enter input file name: UFO.txt
+File 'UFO.txt' does not exist.
+indigo 56 % icount
+Enter input file name: ghost.txt
+File 'ghost.txt' is not readable.
+indigo 59 % icount
+Enter input file name: phone_book
+Count lines, words, characters or all three (l, m, c, a)? Z
+Invalid option
+Count lines, words, characters or all three (l, m, c, a)? t
+Invalid option
+Count lines, words, characters or all three (l, m, c, a)? L
+File 'phone_book' contains 23 lines.
+indigo 60 % icount
+Enter input file name: phone_book
+Count lines, words, characters or all three (l, m, c, a)? M
+File 'phone_book' contains 125 words.
+indigo 61 % icount
+Enter input file name: phone_book
+Count lines, words, characters or all three (l, m, c, a)? c
+File 'phone_book' contains 985 characters.
+indigo 62 % icount
+Enter input file name: phone_book
+Count lines, words, characters or all three (l, m, c, a)? a
+File 'phone_book' contains 23 lines, 125 words, 985 characters.
+indigo 63 % 
+
+#####################################
+
+indigo 75 % doublesp
+Enter input file name: phone_book
+Enter output file name: ghost.txt
+File 'ghost.txt' not writable.
+indigo 76 % doublesp
+Enter input file name: phone_book
+Enter output file name: new.txt
+indigo 77 % doublesp
+Enter input file name: phone_book
+Enter output file name: new.txt
+File 'new.txt' exists.
+Append to it (y/n)? K
+Invalid option
+Append to it (y/n)? b
+Invalid option
+Append to it (y/n)? n
+indigo 78 % doublesp
+Enter input file name: phone_book
+Enter output file name: new.txt
+File 'new.txt' exists.
+Append to it (y/n)? Y
+indigo 79 % 
+

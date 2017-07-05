@@ -1,0 +1,64 @@
+#!/bin/sh
+# EECS2031 - asg2
+# Filename: myutil
+# Author: Modgil, Neha
+# Email: modgilneha@ymail.com
+# Login ID: nehamo
+
+menu
+echo
+echo -n "Enter command: "
+read command
+
+until test $command = q || test $command = Q
+do
+
+if test $command = s || test $command = S
+then
+isearch
+
+elif test $command = c || test $command = C
+then
+icount
+
+elif test $command = f || test $command = F
+then
+allfiles
+
+elif test $command = v || test $command = V
+then
+fdisplay
+
+elif test $command = d || test $command = D
+then
+doublesp
+
+elif test $command = a || test $command = A
+then
+addlines
+
+elif test $command = l || test $command = L
+then
+prtlines
+
+elif test $command = h || test $command = H
+then
+menu
+
+elif test $command = r || test $command = R
+then
+clear
+
+else
+echo "Invalid command"
+fi
+
+echo
+echo -n "Enter command: "
+read command
+done
+
+if test $command = q || test $command = Q
+then
+exit 1
+fi
